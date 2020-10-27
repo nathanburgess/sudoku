@@ -12,6 +12,7 @@ There are two ways you can run this:
     
 ### More Information
 > NOTE: Timing data comes from an average of 5 runs on a 9th generation Intel i9900k CPU running at 4.8GHz.  
+
 Most puzzles are solved in under 200ms.  
 All 401 puzzles included are typically solved in around 78 seconds.  
 
