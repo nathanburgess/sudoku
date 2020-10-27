@@ -113,7 +113,7 @@ class SudokuCSP:
 
     def print_board(self):
         """
-        Helper function to print board as a labeled square.
+        Helper function to print board as a labeled grid
         """
         for a, v in self.assignment.items():
             self.variables[a] = v
@@ -137,10 +137,6 @@ class SudokuCSP:
         return ''.join(ordered_vals)
 
     def write(self, fout=out_filename, mode='w+'):
-        """
-        Solve board and write to desired file, overwriting by default.
-        Specify mode='a+' to append.
-        """
         outfile = open(fout, mode)
         outfile.write(self.__str__())
         outfile.write('\n')
@@ -161,9 +157,6 @@ class SudokuCSP:
 
     @staticmethod
     def get_distance(a, b):
-        """
-        Calculate the distance between two numbers using the Manhattan formula
-        """
         ax, ay = a
         bx, by = b
         return (bx - ax) ** 2 + (by - ay) ** 2
@@ -193,7 +186,7 @@ if __name__ == '__main__':
         csp.print_board()
         start = time.time()
         solution = csp.solve()
-        print("Solved in", time_string(start))
+        print("Solved in %s" % time_string(start))
         solution.print_board()
         solution.write(mode="w+")
     else:
